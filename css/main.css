@@ -21,6 +21,8 @@ textarea {
 body {
     font-size: 1em;
     line-height: 1.4;
+    padding-top: 70px;
+    padding-bottom: 40px;
 }
 
 /*
@@ -92,24 +94,38 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-#container-grafico {
-	margin: 0 auto;
-}
+  #container-grafico {
+  	padding: 4px;
+  	font: 10px sans-serif;
+	margin: 20px auto;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+  }
 
+  #cabecalho-grafico{
+  	margin: 10px auto;
+  	margin: 1px solid black;
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+  #cabecalho-grafico h1 {
+  	font-size: 54px;
+  	font-weight:300;
+    letter-spacing: 2px;
+    margin: 0.3em 0 0.1em;
+    font-family: "Helvetica Neue",Helvetica,sans-serif;
+  }
+  
+ #cabecalho-grafico h2 {
+ 	font-family: "Helvetica Neue",Helvetica,sans-serif;
+ 	letter-spacing: 1px;
+ 	margin-left: 4px;
+	color:#999999;
+	font-size: 12pt;
+ }
+ 
+#grupo-botao-ordenacao { margin-left: 8px; }
+#rodape-grafico { margin-top: 20px;	}
+#rodape-grafico span { font-weight: bold; }
 
 /* ==========================================================================
    Helper classes

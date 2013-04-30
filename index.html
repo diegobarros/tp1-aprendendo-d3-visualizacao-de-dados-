@@ -16,6 +16,7 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="css/grafico_de_barra.css">
         
     </head>
     <body>
@@ -24,15 +25,32 @@
         	<nav class="navbar-inner">
         		<div class="container">
         			<a class="brand" href="index.html">Bar Chart</a>
+        			
+                   
+                   
         		</div>
         	</nav>
         </header>
         
         <div class="container">
         	
+        	<header id="cabecalho-grafico">
+        		<h1>Gráfico de Barras</h1>
+        		<h2>TP 1 - Visualização de Dados: Aprendendo D3</h2>
+        	</header>
+        	
         	<div id="container-grafico">
         		
         	</div>
+        	
+        	<footer id="rodape-grafico">
+        		<span>Ordenação</span>
+        		<div id="grupo-botao-ordenacao" class="btn-group"> 
+        			<button id="ordenacao-alfabetico" class="btn" value="">Alfabética</button>       		
+                    <button id="ordenacao-crescente" class="btn" value="">Crescente</button>
+                   	<button id="ordenacao-decrescente" class="btn" value="">Decrescente</button>
+            	</div>
+        	</footer>
         	
             <hr />
             
@@ -42,8 +60,7 @@
             
         </div>
         
-        
-        
+                
 		<!-- Inicialização dos Scripts -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -54,6 +71,7 @@
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/vendor/bootstrap.min.js"></script>
+          <script src="js/grafico_de_barra.js"></script>
 
     </body>
 </html>
