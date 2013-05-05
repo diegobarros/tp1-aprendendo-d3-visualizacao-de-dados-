@@ -58,6 +58,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
 
   data.forEach(function(d) {
     d.frequency = +d.frequency;
+    d.name = "Frequência"
   });
 
   x.domain(data.map(function(d) { return d.letter; }));
@@ -79,7 +80,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
       .text("Frequency");
       
       
- /* 1 - Grid Lines: Método para desenhar  */
+ /* 1 - Grid Lines: Método para desenhar as linhas do Grid */
  svg.append("g")         
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
@@ -93,7 +94,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
       .tickSize(-width, 0, 0)
       .tickFormat(""));
       
-      
+
   svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
@@ -101,21 +102,28 @@ d3.tsv("dados/data.tsv", function(error, data) {
       .attr("x", function(d) { return x(d.letter); })
       .attr("width", x.rangeBand())
       .attr("y", function(d) { return y(d.frequency); })
-      .attr("height", function(d) { return height - y(d.frequency); });
-
+      .attr("height", function(d) { return height - y(d.frequency); })
+      .attr("data-legend", function(d) { return d.name });
 });
-
-
-
 
 
 
 /*
  * 2 - Legenda 
  */
-
-
-
+legend = svg.append("g")
+  .attr("class","legend")
+  .attr("transform","translate(830,50)")
+  .style("font-size","14px")
+  .call(d3.legend);
+  
+setTimeout(function() { 
+    legend
+      .attr("data-style-padding", 12)
+      .call(d3.legend)
+  }, 500)
+  	 
+  	 
 /*
  * 3 - Linha de Referência 
  */
