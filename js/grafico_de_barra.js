@@ -58,7 +58,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
 
   data.forEach(function(d) {
     d.frequency = +d.frequency;
-    d.name = "Frequência"
+    d.name = "Letra"
   });
 
   x.domain(data.map(function(d) { return d.letter; }));
@@ -134,11 +134,11 @@ setTimeout(function() {
  * 4 - Detalhe Sob Demanda 
  */
 
-$(".bar").tipsy ({
+$(".bar rect").tipsy({
 	gravity: 'w',
 	html: true,
-	title: function() {
-    	return 'Hi there! My color is'; 
+	title: function(d) {
+    	return d.frequency; 
     }
 });
 
