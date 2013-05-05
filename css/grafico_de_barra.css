@@ -12,3 +12,25 @@
 .x.axis path {
   display: none;
 }
+
+
+/*
+ * 1 - Grid Lines: Definição do estilo das linhas do Grid
+ */
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+
+.grid path {
+      stroke-width: 0;
+}
+
+.grid .tick {
+    stroke: lightgrey;
+    opacity: 0.7;
+}
+
+.grid path {
+      stroke-width: 0;
+}
