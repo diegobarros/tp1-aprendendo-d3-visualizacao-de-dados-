@@ -1,6 +1,8 @@
 
 /*
  * Criação do Gráfico de Barras
+ *
+ * Grupo: Bruno Schneider, Diego Barros, Guilherme Santos e Priscilla Vasconcelos
  */
 
 var margin = {top: 20, right: 20, bottom: 30, left: 60},
