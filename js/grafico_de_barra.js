@@ -32,23 +32,22 @@ var svg = d3.select("#container-grafico").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
 /*
- * 1 - Grid Lines 
+ * 1 - Grid Lines
  */
 
 
 /* Função para criar a linha do Grid no eixo X */
-function cria_eixo_x() {        
+function cria_eixo_x() {
    return d3.svg.axis()
-   		 .scale(x)
+         .scale(x)
          .orient("bottom")
          .ticks(5)
 }
 
 
 /* Função para criar a linha do Grid no eixo Y */
-function cria_eixo_y() {        
+function cria_eixo_y() {
     return d3.svg.axis()
         .scale(y)
         .orient("left")
@@ -80,24 +79,34 @@ d3.tsv("dados/data.tsv", function(error, data) {
       .attr("dy", ".71em")
       .style("text-anchor", "end")
       .text("Frequency");
-      
-      
+
+
  /* 1 - Grid Lines: Método para desenhar as linhas do Grid */
- svg.append("g")         
+ svg.append("g")
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
       .call(cria_eixo_x()
       .tickSize(-height, 0, 0)
       .tickFormat(""));
 
-  svg.append("g")         
+svg.append("g")
       .attr("class", "grid")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
       .tickFormat(""));
-      
 
-  svg.selectAll(".bar")
+// Desenha a linha da média
+// A ideia é desenhar por trás (antes) das barras
+var media = d3.mean(data, function(d) { return d.frequency; })
+
+svg.append("line")
+    .attr("class", "linha-da-media")
+    .attr("x1", 0)
+    .attr("y1", y(media))
+    .attr("x2", width)
+    .attr("y2", y(media));
+
+svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
       .attr("class", "bar")
@@ -111,41 +120,40 @@ d3.tsv("dados/data.tsv", function(error, data) {
 
 
 /*
- * 2 - Legenda 
+ * 2 - Legenda
  */
 legend = svg.append("g")
   .attr("class","legend")
   .attr("transform","translate(830,50)")
   .style("font-size","14px")
   .call(d3.legend);
-  
-setTimeout(function() { 
+
+setTimeout(function() {
     legend
       .attr("data-style-padding", 12)
       .call(d3.legend)
   }, 500)
-  	 
-  	 
+
+
 /*
- * 3 - Linha de Referência 
+ * 3 - Linha de Referência
  */
 
 
-
 /*
- * 4 - Detalhe Sob Demanda 
+ * 4 - Detalhe Sob Demanda
  */
 
 $(".bar rect").tipsy({
-	gravity: 'w',
-	html: true,
-	title: function(d) {
-    	return d.frequency; 
+    gravity: 'w',
+    html: true,
+    title: function(d) {
+        return d.frequency;
     }
 });
 
 /*
- * 5 - Opções de Ordenação 
+ * 5 - Opções de Ordenação
  */
 
 
