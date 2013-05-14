@@ -141,7 +141,7 @@ setTimeout(function() {
 
 /*
  * 4 - Detalhe Sob Demanda
-        /* Tool Tips  
+        /* Tool Tips  */
 
 $(".bar rect").tipsy({
     gravity: 'w',
@@ -149,19 +149,8 @@ $(".bar rect").tipsy({
     title: function(d) {
         return d.frequency;
     }
-}); */
+}); 
 
-
-
-    		$('rect').tipsy({
-	        html: false,
-	     live: true,
-	     fade: true,
-	     gravity: 'w',
-	     title: function () {
-	         return this.__data__;
-	     }
-	 });
 
 /*
  * 5 - Opções de Ordenação
