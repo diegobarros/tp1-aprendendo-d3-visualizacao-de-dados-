@@ -159,7 +159,7 @@ $(".bar rect").tipsy({
 	     fade: true,
 	     gravity: 'w',
 	     title: function(d) {
-	        return d.frequency;
+	        return this.__data__;
 	     }
 	 });
 
