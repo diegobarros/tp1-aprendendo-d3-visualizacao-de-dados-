@@ -148,8 +148,8 @@ $('rect').tipsy({
     html: false,
     live: true,
     fade: true,
-    title: function(d) {
-        return d.frequency;
+    title: function() {
+        return data.frequency;
     }
 }); 
 
