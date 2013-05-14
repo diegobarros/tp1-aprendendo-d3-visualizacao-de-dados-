@@ -141,18 +141,18 @@ setTimeout(function() {
 
 /*
  * 4 - Detalhe Sob Demanda
-        /* Tool Tips  */
+       Tool Tips  */
 
  /* Tool Tips */
-         $('rect').tipsy({
-	     html: false,
-	  live: true,
-	  fade: true,
-	  gravity: 'w',
-	  title: function () {
-	      return frequency;
-	  }  
-    });
+$('svg rect').tipsy({
+    html: true,
+    live: true,
+    fade: true,
+    gravity: 'ws',
+    title: function () {
+        return this.__data__.frequency;
+    }  
+});
 
 
 /*
