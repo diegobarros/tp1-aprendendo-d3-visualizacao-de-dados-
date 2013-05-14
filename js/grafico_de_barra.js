@@ -1,4 +1,3 @@
-
 /*
  * Criação do Gráfico de Barras
  *
@@ -61,7 +60,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
   //converter as frequências para números
   data.forEach(function(d) {
     d.frequency = +d.frequency;
-    d.name = "Letra"
+    d.name = "Frequency"
   });
 
   // Colocar valores numa variavel externa para nao precisar colocar todo o
@@ -130,7 +129,7 @@ svg.selectAll(".bar")
  */
 legend = svg.append("g")
   .attr("class","legend")
-  .attr("transform","translate(830,50)")
+  .attr("transform","translate(840,50)")
   .style("font-size","14px")
   .call(d3.legend);
 
