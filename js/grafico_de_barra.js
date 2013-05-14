@@ -153,15 +153,15 @@ $(".bar rect").tipsy({
 
 
 
-    		$('rect').tipsy({
-	        	html: false,
-	            live: true,
-	            fade: true,
-	            gravity: 'w',
-	            title: function(d) {
-	                return d.frequency;
-	            }
-	        });
+    		$('.bar rect').tipsy({
+	        html: false,
+	     live: true,
+	     fade: true,
+	     gravity: 'w',
+	     title: function(d) {
+	        return d.frequency;
+	     }
+	 });
 
 /*
  * 5 - Opções de Ordenação
