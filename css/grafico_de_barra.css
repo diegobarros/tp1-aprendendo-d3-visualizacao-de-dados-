@@ -29,7 +29,7 @@
  */
 .legend rect {
   fill: lightgrey;
-  stroke: black;
+  stroke: lightgrey;
   opacity: 0.7;
  }
 
