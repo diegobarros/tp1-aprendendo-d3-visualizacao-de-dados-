@@ -143,10 +143,12 @@ setTimeout(function() {
  * 4 - Detalhe Sob Demanda
         /* Tool Tips  */
 
-$(".bar rect").tipsy({
+$('rect').tipsy({
     gravity: 'w',
-    html: true,
-    title: function() {
+    html: false,
+    live: true,
+    fade: true,
+    title: function(d) {
         return d.frequency;
     }
 }); 
