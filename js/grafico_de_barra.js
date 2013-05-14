@@ -153,13 +153,13 @@ $(".bar rect").tipsy({
 
 
 
-    		$('.bar rect').tipsy({
+    		$("rect").tipsy({
 	        html: false,
 	     live: true,
 	     fade: true,
 	     gravity: 'w',
 	     title: function(d) {
-	        return this.__data__;
+	        return d.frequency;
 	     }
 	 });
 
