@@ -158,7 +158,7 @@ $(".bar rect").tipsy({
 	     live: true,
 	     fade: true,
 	     gravity: 'w',
-	     title: function(d) {
+	     title: function() {
 	        return d.frequency;
 	     }
 	 });
