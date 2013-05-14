@@ -149,7 +149,7 @@ $('rect').tipsy({
     live: true,
     fade: true,
     title: function() {
-        return data.frequency;
+        return data;
     }
 }); 
 
