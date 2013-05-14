@@ -146,8 +146,8 @@ setTimeout(function() {
 $(".bar rect").tipsy({
     gravity: 'w',
     html: true,
-    title: function(d) {
-        return d.frequency;
+    title: function() {
+        return frequency;
     }
 }); 
 
