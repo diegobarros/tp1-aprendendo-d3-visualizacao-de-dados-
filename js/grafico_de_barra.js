@@ -143,15 +143,16 @@ setTimeout(function() {
  * 4 - Detalhe Sob Demanda
         /* Tool Tips  */
 
-$('rect').tipsy({
-    gravity: 'w',
-    html: true,
-    live: true,
-    fade: true,
-    title: function(d) {
-        return d.frequency;
-    }
-}); 
+ /* Tool Tips */
+         $('rect').tipsy({
+	     html: false,
+	  live: true,
+	  fade: true,
+	  gravity: 'w',
+	  title: function () {
+	      return this.__data__;
+	  }  
+    });
 
 
 /*
