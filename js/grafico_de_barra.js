@@ -147,7 +147,7 @@ $(".bar rect").tipsy({
     gravity: 'w',
     html: true,
     title: function() {
-        return frequency;
+        return d.frequency;
     }
 }); 
 
