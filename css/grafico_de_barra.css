@@ -28,9 +28,9 @@
  * 2 - Legenda: Definição do quadro de legenda.
  */
 .legend rect {
-  fill: white;
+  fill: lightgrey;
   stroke: black;
-  opacity: 0.8;
+  opacity: 0.7;
  }
 
 .linha-da-media {
