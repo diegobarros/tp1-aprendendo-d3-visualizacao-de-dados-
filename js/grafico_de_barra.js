@@ -123,7 +123,7 @@ svg.selectAll(".bar")
  */
 legend = svg.append("g")
   .attr("class","legend")
-  .attr("transform","translate(855,30)")
+  .attr("transform","translate(855,20)")
   .style("font-size","14px")
   .call(d3.legend);
 
