@@ -145,11 +145,11 @@ setTimeout(function() {
 
 $('rect').tipsy({
     gravity: 'w',
-    html: false,
+    html: true,
     live: true,
     fade: true,
-    title: function() {
-        return data;
+    title: function(d) {
+        return d.frequency;
     }
 }); 
 
