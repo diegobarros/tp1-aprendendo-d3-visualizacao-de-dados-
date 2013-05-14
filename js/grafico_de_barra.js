@@ -32,6 +32,7 @@ var svg = d3.select("#container-grafico").append("svg")
   .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+var vetDados; // os dados do gráfico
 /*
  * 1 - Grid Lines
  */
@@ -57,10 +58,15 @@ function cria_eixo_y() {
 
 d3.tsv("dados/data.tsv", function(error, data) {
 
+  //converter as frequências para números
   data.forEach(function(d) {
     d.frequency = +d.frequency;
     d.name = "Letra"
   });
+
+  // Colocar valores numa variavel externa para nao precisar colocar todo o
+  // código do programa aqui dentro desta função.
+  vetDados = data;
 
   x.domain(data.map(function(d) { return d.letter; }));
   y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
@@ -136,11 +142,6 @@ setTimeout(function() {
 
 
 /*
- * 3 - Linha de Referência
- */
-
-
-/*
  * 4 - Detalhe Sob Demanda
  */
 
@@ -155,5 +156,25 @@ $(".bar rect").tipsy({
 /*
  * 5 - Opções de Ordenação
  */
-
+function Ordenar(tipo){
+    var criterioOrdenacao;
+    if (tipo == 'crescente')
+        criterioOrdenacao = function(a, b) { return a.frequency - b.frequency; }
+    else if (tipo == 'decrescente')
+        criterioOrdenacao = function(a, b) { return b.frequency - a.frequency; }
+    else
+        criterioOrdenacao = function(a, b) { return d3.ascending(a.letter, b.letter); }
+    var novoX = x.domain(vetDados.sort(criterioOrdenacao)
+                         .map(function(d) { return d.letter; }))
+                 .copy();
+    var transition = svg.transition().duration(750);
+    var delay = function(d, i) { return i * 50; };
+    transition.selectAll(".bar")
+        .delay(delay)
+        .attr("x", function(d) { return novoX(d.letter); });
+    transition.select(".x.axis")
+        .call(xAxis)
+      .selectAll("g")
+        .delay(delay);
+}
 
