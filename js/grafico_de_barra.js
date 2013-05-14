@@ -1,4 +1,3 @@
-
 /*
  * Criação do Gráfico de Barras
  *
@@ -59,7 +58,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
 
   data.forEach(function(d) {
     d.frequency = +d.frequency;
-    d.name = "Letra"
+    d.name = "Frequency"
   });
 
   x.domain(data.map(function(d) { return d.letter; }));
