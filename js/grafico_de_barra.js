@@ -150,7 +150,7 @@ setTimeout(function() {
 	  fade: true,
 	  gravity: 'w',
 	  title: function () {
-	      return this.__data__;
+	      return frequency;
 	  }  
     });
 
