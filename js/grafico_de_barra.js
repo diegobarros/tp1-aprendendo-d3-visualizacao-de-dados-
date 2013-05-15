@@ -100,22 +100,6 @@ svg.append("g")
       .tickFormat(""));  
 
 
-/*
- * 2 - Legenda
- */
-legend = svg.append("g")
-  .attr("class","legend")
-  .attr("transform","translate(850,3)")
-  .style("font-size","14px")
-  .call(d3.legend);
-
-setTimeout(function() {
-    legend
-      .attr("data-style-padding", 12)
-      .call(d3.legend)
-  }, 500)
-  
-  
 /* 
  * 3 - Desenha a linha da média
  A ideia é desenhar por trás (antes) das barras */
@@ -141,7 +125,22 @@ svg.selectAll(".bar")
 });
 
 
+/*
+ * 2 - Legenda
+ */
+legend = svg.append("g")
+  .attr("class","legend")
+  .attr("transform","translate(850,3)")
+  .style("font-size","14px")
+  .call(d3.legend);
 
+setTimeout(function() {
+    legend
+      .attr("data-style-padding", 12)
+      .call(d3.legend)
+  }, 500)
+  
+  
 /*
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
