@@ -98,9 +98,11 @@ svg.append("g")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
       .tickFormat(""));
+      
 
-// Desenha a linha da média
-// A ideia é desenhar por trás (antes) das barras
+/* 
+ * 3 -Desenha a linha da média
+ Desenhar por trás (antes) das barras */
 var media = d3.mean(data, function(d) { return d.frequency; })
 
 svg.append("line")
@@ -128,7 +130,7 @@ svg.selectAll(".bar")
  */
 legend = svg.append("g")
   .attr("class","legend")
-  .attr("transform","translate(850,3)")
+  .attr("transform","translate(880,3)")
   .style("font-size","14px")
   .call(d3.legend);
 
