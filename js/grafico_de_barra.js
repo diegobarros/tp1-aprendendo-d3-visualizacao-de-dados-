@@ -102,14 +102,14 @@ svg.append("g")
 // 3 - Desenha a linha da média
 // A ideia é desenhar por trás (antes) das barras
 
-var media = d3.mean(data, function(d) { return d.frequency; })
+/*var media = d3.mean(data, function(d) { return d.frequency; }) 
 
 svg.append("line")
     .attr("class", "linha-da-media")
     .attr("x1", 0)
     .attr("y1", y(media))
     .attr("x2", width)
-    .attr("y2", y(media));
+    .attr("y2", y(media)); */
 
 svg.selectAll(".bar")
       .data(data)
@@ -143,7 +143,7 @@ setTimeout(function() {
 /*
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
-/*
+
 $('svg rect').tipsy({
     html: true,
     live: true,
@@ -154,7 +154,7 @@ $('svg rect').tipsy({
     }  
 });
 
-*/
+
 /*
  * 5 - Opções de Ordenação
  */
