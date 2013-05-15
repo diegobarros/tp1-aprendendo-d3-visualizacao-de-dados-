@@ -86,7 +86,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
 
 
  /* 1 - Grid Lines: Método para desenhar as linhas do Grid */
- svg.append("g")
+/* svg.append("g")
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
       .call(cria_eixo_x()
@@ -97,7 +97,7 @@ svg.append("g")
       .attr("class", "grid")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
-      .tickFormat(""));
+      .tickFormat(""));  */
 
 // 3 - Desenha a linha da média
 // A ideia é desenhar por trás (antes) das barras
@@ -127,7 +127,7 @@ svg.selectAll(".bar")
 /*
  * 2 - Legenda
  */
-/* legend = svg.append("g")
+legend = svg.append("g")
   .attr("class","legend")
   .attr("transform","translate(850,3)")
   .style("font-size","14px")
@@ -137,7 +137,7 @@ setTimeout(function() {
     legend
       .attr("data-style-padding", 12)
       .call(d3.legend)
-  }, 500) */
+  }, 500) 
 
 
 /*
