@@ -144,7 +144,7 @@ setTimeout(function() {
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
 
-$('svg rect').tipsy({
+/*$('svg rect').tipsy({
     html: true,
     live: true,
     fade: true,
@@ -152,13 +152,13 @@ $('svg rect').tipsy({
     title: function () {
         return this.__data__.frequency;
     }  
-});
+}); */
 
 
 /*
  * 5 - Opções de Ordenação
  */
- /* function Ordenar(tipo){
+ function Ordenar(tipo){
     var criterioOrdenacao;
     if (tipo == 'crescente')
         criterioOrdenacao = function(a, b) { return a.frequency - b.frequency; }
@@ -178,5 +178,5 @@ $('svg rect').tipsy({
         .call(xAxis)
       .selectAll("g")
         .delay(delay);
-} */
+} 
 
