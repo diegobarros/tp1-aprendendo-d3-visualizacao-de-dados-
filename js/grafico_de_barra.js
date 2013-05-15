@@ -97,7 +97,7 @@ svg.append("g")
       .attr("class", "grid")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
-      .tickFormat(""));  */
+      .tickFormat(""));  
 
 /* 
  * 3 - Desenha a linha da média
