@@ -101,7 +101,7 @@ svg.append("g")
 
 // Desenha a linha da média
 // A ideia é desenhar por trás (antes) das barras
-/*var media = d3.mean(data, function(d) { return d.frequency; })
+var media = d3.mean(data, function(d) { return d.frequency; })
 
 svg.append("line")
     .attr("class", "linha-da-media")
@@ -126,7 +126,7 @@ svg.selectAll(".bar")
 /*
  * 2 - Legenda
  */
-/*legend = svg.append("g")
+legend = svg.append("g")
   .attr("class","legend")
   .attr("transform","translate(850,3)")
   .style("font-size","14px")
@@ -143,7 +143,7 @@ setTimeout(function() {
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
 
-/*$('svg rect').tipsy({
+$('svg rect').tipsy({
     html: true,
     live: true,
     fade: true,
@@ -157,7 +157,7 @@ setTimeout(function() {
 /*
  * 5 - Opções de Ordenação
  */
-/* function Ordenar(tipo){
+ function Ordenar(tipo){
     var criterioOrdenacao;
     if (tipo == 'crescente')
         criterioOrdenacao = function(a, b) { return a.frequency - b.frequency; }
@@ -177,5 +177,5 @@ setTimeout(function() {
         .call(xAxis)
       .selectAll("g")
         .delay(delay);
-} */
+}
 
