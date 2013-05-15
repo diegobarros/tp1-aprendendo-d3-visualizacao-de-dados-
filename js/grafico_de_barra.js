@@ -154,7 +154,7 @@ $('svg rect').tipsy({
     }  
 });
 
-/*
+*/
 /*
  * 5 - Opções de Ordenação
  */
@@ -178,5 +178,5 @@ $('svg rect').tipsy({
         .call(xAxis)
       .selectAll("g")
         .delay(delay);
-} /*
+} */
 
