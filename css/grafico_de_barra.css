@@ -28,11 +28,11 @@
  * 2 - Legenda: Definição do quadro de legenda.
  */
 
-.legend rect {
+/*.legend rect {
   fill: none;
   stroke: none;
   opacity: 0.5;
- }
+ } */
 
 .linha-da-media {
     stroke: grey;
