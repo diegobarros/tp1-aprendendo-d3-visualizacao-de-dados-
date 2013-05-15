@@ -55,9 +55,9 @@ function cria_eixo_y() {
 }
 
 
-/* d3.tsv("dados/data.tsv", function(error, data) {
+d3.tsv("dados/data.tsv", function(error, data) {
 
-  data.forEach(function(d) {
+  /*data.forEach(function(d) {
     d.frequency = +d.frequency;
     d.name = "Frequency"
   });
