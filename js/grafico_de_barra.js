@@ -86,7 +86,7 @@ d3.tsv("dados/data.tsv", function(error, data) {
 
 
  /* 1 - Grid Lines: Método para desenhar as linhas do Grid */
-/* svg.append("g")
+svg.append("g")
       .attr("class", "grid")
       .attr("transform", "translate(0," + height + ")")
       .call(cria_eixo_x()
@@ -97,19 +97,37 @@ svg.append("g")
       .attr("class", "grid")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
-      .tickFormat(""));  */
+      .tickFormat(""));  
 
-// 3 - Desenha a linha da média
-// A ideia é desenhar por trás (antes) das barras
 
-/*var media = d3.mean(data, function(d) { return d.frequency; }) 
+/*
+ * 2 - Legenda
+ */
+legend = svg.append("g")
+  .attr("class","legend")
+  .attr("transform","translate(850,3)")
+  .style("font-size","14px")
+  .call(d3.legend);
+
+setTimeout(function() {
+    legend
+      .attr("data-style-padding", 12)
+      .call(d3.legend)
+  }, 500)
+  
+  
+/* 
+ * 3 - Desenha a linha da média
+ A ideia é desenhar por trás (antes) das barras */
+
+var media = d3.mean(data, function(d) { return d.frequency; }) 
 
 svg.append("line")
     .attr("class", "linha-da-media")
     .attr("x1", 0)
     .attr("y1", y(media))
     .attr("x2", width)
-    .attr("y2", y(media)); */
+    .attr("y2", y(media));
 
 svg.selectAll(".bar")
       .data(data)
@@ -125,26 +143,10 @@ svg.selectAll(".bar")
 
 
 /*
- * 2 - Legenda
- */
-/*legend = svg.append("g")
-  .attr("class","legend")
-  .attr("transform","translate(850,3)")
-  .style("font-size","14px")
-  .call(d3.legend);
-
-setTimeout(function() {
-    legend
-      .attr("data-style-padding", 12)
-      .call(d3.legend)
-  }, 500) */
-
-
-/*
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
 
-/*$('svg rect').tipsy({
+$('svg rect').tipsy({
     html: true,
     live: true,
     fade: true,
@@ -152,7 +154,7 @@ setTimeout(function() {
     title: function () {
         return this.__data__.frequency;
     }  
-}); */
+}); 
 
 
 /*
