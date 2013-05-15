@@ -27,6 +27,7 @@
 /*
  * 2 - Legenda: Definição do quadro de legenda.
  */
+/*
 .legend rect {
   fill: none;
   stroke: none;
@@ -36,5 +37,5 @@
 .linha-da-media {
     stroke: grey;
     stroke-width: 2;
-}
+} */
 
