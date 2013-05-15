@@ -97,21 +97,20 @@ svg.append("g")
       .attr("class", "grid")
       .call(cria_eixo_y()
       .tickSize(-width, 0, 0)
-      .tickFormat(""));  
-
+      .tickFormat(""));  */
 
 /* 
  * 3 - Desenha a linha da média
  A ideia é desenhar por trás (antes) das barras */
 
-var media = d3.mean(data, function(d) { return d.frequency; }) 
+*var media = d3.mean(data, function(d) { return d.frequency; }) 
 
 svg.append("line")
     .attr("class", "linha-da-media")
     .attr("x1", 0)
     .attr("y1", y(media))
     .attr("x2", width)
-    .attr("y2", y(media));
+    .attr("y2", y(media)); 
 
 svg.selectAll(".bar")
       .data(data)
@@ -123,6 +122,7 @@ svg.selectAll(".bar")
       .attr("height", function(d) { return height - y(d.frequency); })
       .attr("data-legend", function(d) { return d.name });
 });
+
 
 
 /*
@@ -138,9 +138,9 @@ setTimeout(function() {
     legend
       .attr("data-style-padding", 12)
       .call(d3.legend)
-  }, 500)
-  
-  
+  }, 500) 
+
+
 /*
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
@@ -180,4 +180,3 @@ $('svg rect').tipsy({
       .selectAll("g")
         .delay(delay);
 } 
-
