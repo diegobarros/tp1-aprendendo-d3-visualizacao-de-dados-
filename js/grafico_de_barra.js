@@ -101,7 +101,7 @@ svg.append("g")
 
 // 3 - Desenha a linha da média
 // A ideia é desenhar por trás (antes) das barras
-/*
+
 var media = d3.mean(data, function(d) { return d.frequency; })
 
 svg.append("line")
@@ -110,7 +110,7 @@ svg.append("line")
     .attr("y1", y(media))
     .attr("x2", width)
     .attr("y2", y(media));
-*/
+
 svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
@@ -127,7 +127,7 @@ svg.selectAll(".bar")
 /*
  * 2 - Legenda
  */
-legend = svg.append("g")
+/*legend = svg.append("g")
   .attr("class","legend")
   .attr("transform","translate(850,3)")
   .style("font-size","14px")
@@ -137,7 +137,7 @@ setTimeout(function() {
     legend
       .attr("data-style-padding", 12)
       .call(d3.legend)
-  }, 500) 
+  }, 500) */
 
 
 /*
