@@ -32,7 +32,11 @@
   fill: none;
   stroke: none;
   opacity: 0.5;
- } */
+ } 
+ 
+ /*
+  * 3 - Definição da linha de referência
+  */
 
 .linha-da-media {
     stroke: red;
