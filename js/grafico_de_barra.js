@@ -5,7 +5,7 @@
  */
 
 var margin = {top: 20, right: 20, bottom: 30, left: 60},
-    width = 1004 - margin.left - margin.right,
+    width = 1014 - margin.left - margin.right,
     height = 540 - margin.top - margin.bottom;
 
 var formatPercent = d3.format(".0%");
@@ -128,7 +128,7 @@ svg.selectAll(".bar")
  */
 legend = svg.append("g")
   .attr("class","legend")
-  .attr("transform","translate(865,3)")
+  .attr("transform","translate(850,3)")
   .style("font-size","14px")
   .call(d3.legend);
 
