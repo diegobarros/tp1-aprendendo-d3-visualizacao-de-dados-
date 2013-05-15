@@ -99,8 +99,9 @@ svg.append("g")
       .tickSize(-width, 0, 0)
       .tickFormat(""));
 
-// Desenha a linha da média
+// 3 - Desenha a linha da média
 // A ideia é desenhar por trás (antes) das barras
+/*
 var media = d3.mean(data, function(d) { return d.frequency; })
 
 svg.append("line")
@@ -109,7 +110,7 @@ svg.append("line")
     .attr("y1", y(media))
     .attr("x2", width)
     .attr("y2", y(media));
-
+*/
 svg.selectAll(".bar")
       .data(data)
     .enter().append("rect")
@@ -126,7 +127,7 @@ svg.selectAll(".bar")
 /*
  * 2 - Legenda
  */
-legend = svg.append("g")
+/* legend = svg.append("g")
   .attr("class","legend")
   .attr("transform","translate(850,3)")
   .style("font-size","14px")
@@ -136,13 +137,13 @@ setTimeout(function() {
     legend
       .attr("data-style-padding", 12)
       .call(d3.legend)
-  }, 500)
+  }, 500) */
 
 
 /*
  * 4 - Detalhe Sob Demanda
        Tool Tips  */
-
+/*
 $('svg rect').tipsy({
     html: true,
     live: true,
@@ -153,11 +154,11 @@ $('svg rect').tipsy({
     }  
 });
 
-
+/*
 /*
  * 5 - Opções de Ordenação
  */
- function Ordenar(tipo){
+ /* function Ordenar(tipo){
     var criterioOrdenacao;
     if (tipo == 'crescente')
         criterioOrdenacao = function(a, b) { return a.frequency - b.frequency; }
@@ -177,5 +178,5 @@ $('svg rect').tipsy({
         .call(xAxis)
       .selectAll("g")
         .delay(delay);
-}
+} /*
 
