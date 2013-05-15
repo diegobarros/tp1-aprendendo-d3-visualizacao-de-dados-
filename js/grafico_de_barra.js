@@ -157,7 +157,7 @@ setTimeout(function() {
 /*
  * 5 - Opções de Ordenação
  */
-/*function Ordenar(tipo){
+/* function Ordenar(tipo){
     var criterioOrdenacao;
     if (tipo == 'crescente')
         criterioOrdenacao = function(a, b) { return a.frequency - b.frequency; }
@@ -177,5 +177,5 @@ setTimeout(function() {
         .call(xAxis)
       .selectAll("g")
         .delay(delay);
-}
+} */
 
